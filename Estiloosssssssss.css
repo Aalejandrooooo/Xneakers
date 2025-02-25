@@ -1,0 +1,423 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    height: 80px;
+    background: #474646;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre logo y texto */
+}
+
+.logo {
+    width: 80px; /* Ajusta según el tamaño de tu logo */
+    height: auto;
+}
+
+/* Estilos generales del navbar */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #474646;
+    padding: 15px 30px;
+    border-radius: 8px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos de los submenús */
+.submenu {
+    position: relative;
+}
+
+.carrito {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 3px 7px;
+}
+
+.qr-container {
+    width: 50px; /* Ajusta el tamaño del QR */
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Bordes redondeados para un mejor diseño */
+}
+
+.qr-container::before {
+    content: "";
+    background: url('../xneakers_qr.png') no-repeat center center;
+    background-size: contain;
+    width: 20px; /* Tamaño del logo en el centro */
+    height: 20px;
+    position: absolute;
+    z-index: 2; /* Para que el logo esté por encima del QR */
+    border-radius: 50%;
+}
+
+
+.iconos-header {
+    display: flex;
+    align-items: center;
+}
+
+.iconos-header a {
+    margin-left: 15px;
+}
+
+.iconos-header img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.carrito img {
+    width: 30px;
+    height: auto;
+}
+
+.carrito span {
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+nav ul li a[href="Tallas de zapatillas.html"] {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+
+
+.submenu-items {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 180px;
+}
+
+.submenu:hover .submenu-items {
+    display: block;
+}
+
+/* Transiciones y animaciones */
+.dropdown-menu, .submenu-items {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botón modo oscuro (para implementar en JS) */
+#modoOscuro {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#modoOscuro:hover {
+    color: #ffcc00;
+}
+
+body.oscuro {
+    background-color: #121212;
+    color: white;
+}
+
+body.oscuro header {
+    background-color: #1e1e1e;
+}
+
+body.oscuro nav ul li a {
+    color: white;
+}
+/* Sección de productos */
+main {
+    padding: 50px 0;
+    background: #f4f4f4;
+}
+
+/* Estilo de la sección de productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos de cada producto */
+.producto {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Imágenes */
+.producto img {
+    max-width: 100%;
+    height: 120px; 
+    object-fit: contain; 
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}
+
+.product h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+
+
+.button-container {
+    margin-top: auto;
+}
+
+.boton {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+
+/* Botón Comprar */
+.btn-comprar {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn-comprar:hover {
+    background-color: darkorange;
+
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    margin-top: 20px;
+}
+
+.redes a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Estilos para el botón de compartir */
+#btnCompartir {
+    background-color: #ff6600; /* Color llamativo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#btnCompartir:hover {
+    background-color: #cc5500; /* Color más oscuro al pasar el mouse */
+}
+
+#compartirOpciones {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#compartirOpciones a {
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+#compartirOpciones a:hover {
+    background-color: #555;
+}
+
+/* Ocultar opciones por defecto */
+.oculto {
+    display: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.logo {
+    height: 40px;
+}
+
+.content {
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+.buscador {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botón de la lupa */
+#btnBuscar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+
+/* Campo de búsqueda oculto por defecto */
+#campoBusqueda {
+    display: none;
+    width: 90px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Mostrar campo de búsqueda cuando se activa */
+#campoBusqueda.mostrar {
+    display: inline-block;
+}
+
+/* Modo oscuro */
+.modo-oscuro {
+    background-color: #222;
+    color: white;
+}
+
+.modo-oscuro .producto {
+    background-color: #333;
+    color:white;
+}
